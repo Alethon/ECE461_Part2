@@ -6,3 +6,6 @@
 
 ### VS Code ###
 **/.vscode/
+
+## compiled Java output ##
+**/*.class
