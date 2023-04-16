@@ -1,0 +1,12 @@
+## library files ##
+lib*.*
+cli_NetScoreUtil.h
+
+## compiled Java output ##
+*.class
+
+## other compiled output ##
+cli.exe
+.env
+*.txt
+temp

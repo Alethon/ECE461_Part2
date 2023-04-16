@@ -1,9 +1,8 @@
-cli/cli.exe
-cli/.env
-cli/*.txt
-cli/temp
-cli/lib*.*
-cli/*.class
-cli/cli_NetScoreUtil.h
-.idea/
-.vscode/
+### IntelliJ IDEA ###
+**/.idea/
+*.iws
+*.iml
+*.ipr
+
+### VS Code ###
+**/.vscode/
