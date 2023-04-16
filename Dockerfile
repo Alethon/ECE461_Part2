@@ -1,6 +1,6 @@
 # Use the official maven/Java 17 image to create a build artifact.
 # https://hub.docker.com/_/maven
-FROM maven:3.8.3-openjdk-17-slim AS build
+FROM maven:3.6.3-openjdk-17-slim AS build
 WORKDIR /app
 COPY . /app
 RUN mvn -f /app/api_paths/pom.xml clean package
