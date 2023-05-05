@@ -142,8 +142,6 @@ public class AuthenticateService {
         if (token == null || token.length() < 1) {
             logger.info("Token missing: {}", token);
             return false;
-        } else {
-            token = token.substring(7);
         }
         
         try {
@@ -157,8 +155,6 @@ public class AuthenticateService {
         if (token == null || token.length() < 1) {
             logger.info("Token missing: {}", token);
             return false;
-        } else {
-            token = token.substring(7);
         }
 
         try {
