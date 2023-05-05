@@ -2,6 +2,7 @@ package com.spring_rest_api.api_paths.service;
 
 import java.util.concurrent.ExecutionException;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.DependsOn;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +25,9 @@ public class ResetService {
     private final CollectionReference tokenUsageCollectionReference = FirestoreClient.getFirestore().collection("TokenUsage");
     private final CollectionReference usersCollectionReference = FirestoreClient.getFirestore().collection("Users");
     private int batchSize = 1000;
+
+    @Autowired
+    AuthenticateService authenticateService;
 
 
     public boolean checkAdminToken(String token) throws ExecutionException, InterruptedException {
@@ -127,6 +131,7 @@ public class ResetService {
             System.err.println("Error deleting users collection : " + e.getMessage());
             result = false;
         }
+        authenticateService.createDefaultUser();
 
         return result;
     }

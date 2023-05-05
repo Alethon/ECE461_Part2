@@ -297,7 +297,7 @@ public class AuthenticateService {
     }
 
     // The following is for default username and Secret
-    // @PostConstruct
+    @PostConstruct
     // @DependsOn("firestoreInitialization")
     public void createDefaultUser() {
         String defaultUsername = "ece30861defaultadminuser";

@@ -29,8 +29,11 @@ public class ResetController {
     @DeleteMapping(value = "/reset")
     public ResponseEntity<String> reset(@RequestHeader("X-Authorization") String token) {
         try {
-            if(!authenticateService.validateAuthHeaderForAdmin(token)) 
+            if(!authenticateService.validateAuthHeaderForUser(token))
                 return badRequestError;
+
+            if(!authenticateService.validateAuthHeaderForAdmin(token)) 
+                return unAuthError;
 
             // if (resetService.checkAdminToken(token) == false)
             //     return unAuthError;
